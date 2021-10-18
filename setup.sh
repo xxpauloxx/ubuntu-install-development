@@ -7,7 +7,8 @@ sudo apt install curl wget git g++ make cmake build-essential libssl-dev zlib1g-
                  libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev \
                  libffi-dev liblzma-dev zsh tmate neofetch nmap docker.io docker-compose \
                  meld automake autoconf binutils fakeroot findutils flex inkscape gimp \
-                 iftop vnstat iptraf hping3 tcpdump tldr jq fzf silversearcher-ag fonts-jetbrains-mono
+                 iftop vnstat iptraf hping3 tcpdump tldr jq fzf silversearcher-ag fonts-jetbrains-mono \
+                 libpq-dev postgresql postgresql-contrib
 
 sudo snap install ngrok
 sudo snap install vault
@@ -50,9 +51,12 @@ export NVM_DIR="$HOME/.nvm"
 nvm install v14.18.1
 nvm use v14.18.1
 
-nvm install --global neovim
-nvm install --global ionic
-nvm install --global expo-cli
+npm install --global typescript
+npm install --global neovim
+npm install --global ionic
+npm install --global expo-cli
+npm install --global nativescript
+npm install --global next react react-dom
 
 # Install Sdkman
 curl -s "https://get.sdkman.io" | zsh
@@ -67,5 +71,10 @@ sdk install java
 mkdir -p "$HOME/.zsh"
 git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 
+# Install plug vim manager
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
 # Zsh configuration
 mv .zshrc $HOME/.zshrc
+
